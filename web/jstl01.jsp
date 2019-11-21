@@ -56,8 +56,10 @@ ${name}
 </c:forEach>
 
 <h3>遍历0到100之间的所有偶数,中间用逗号分割</h3>
-<c:forEach begin="0" end="100" var="i">
-    ${ i },
+<c:forEach begin="0" end="100" step="2" var="i" varStatus="status">
+
+    ${ i }
+    <c:if test="${ !status.last }">,</c:if>
 </c:forEach>
 
 </body>
