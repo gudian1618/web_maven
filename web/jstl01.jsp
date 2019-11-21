@@ -1,4 +1,6 @@
-<%--
+<%@ page import="com.github.gudian1618.User" %>
+<%@ page import="java.util.Map" %>
+<%@ page import="java.util.HashMap" %><%--
   Created by IntelliJ IDEA.
   com.github.gudian1618.User: gudian1618
   Date: 2019/11/20
@@ -33,10 +35,30 @@ ${name}
 
     }
 %>
-<c:forEach items="${ names }" var="name"></c:forEach>
-${name}<br>
-<h2>遍历域中的map集合中的元素</h2>
+<c:forEach items="${ names }" var="name">
+    ${name}<br>
+</c:forEach>
 
+<h2>遍历域中的map集合中的元素</h2>
+<%
+    //声明User对象,并将user对象存入域中
+    Map map = new HashMap();
+    map.put("name", "阿凡达");
+    map.put("age", 18);
+    map.put("addr", "北京");
+    request.setAttribute("map1", map);
+    // 通过EL获取域中的User对象中的属性值
+%>
+<c:forEach items="${map1}" var="kv">
+    ${ kv.getKey() } <br>
+    ${ kv.getValue() } <br>
+    ${ kv } <br>
+</c:forEach>
+
+<h3>遍历0到100之间的所有偶数,中间用逗号分割</h3>
+<c:forEach begin="0" end="100" var="i">
+    ${ i },
+</c:forEach>
 
 </body>
 </html>
