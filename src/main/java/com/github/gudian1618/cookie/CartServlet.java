@@ -11,7 +11,6 @@ import java.io.IOException;
  * 负责将商品加入购物车(cookie)
  */
 
-
 @WebServlet(name = "CartServlet")
 public class CartServlet extends HttpServlet {
     @Override
@@ -22,5 +21,14 @@ public class CartServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         System.out.println("CartServlet.doGet()");
+        // 1.获取要加入购物车的商品信息(prod)
+
+        // 2.创建cookie对象,将商品保存到cookie中
+
+        // 3.将cookie发送给浏览器,让浏览器保存cookie信息
+
+        // 4.做出响应
+
+
     }
 }
