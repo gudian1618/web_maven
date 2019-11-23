@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 /**
  * 负责将商品加入购物车(cookie)
@@ -29,9 +30,11 @@ public class CartServlet extends HttpServlet {
         // 2.创建cookie对象,将商品保存到cookie中
         Cookie cookie = new Cookie("prod", prod);
         // 3.将cookie发送给浏览器,让浏览器保存cookie信息
-
+        response.addCookie(cookie);
+        // Set-Cookie:prod=xxx
         // 4.做出响应
-
+        PrintWriter out = response.getWriter();
+        out.write("成功将["+prod+"]加入了购物车...");
 
     }
 }
