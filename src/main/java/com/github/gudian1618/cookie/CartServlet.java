@@ -13,8 +13,8 @@ import java.io.PrintWriter;
  * 负责将商品加入购物车(cookie)
  */
 
-@WebServlet(name = "/CartServlet")
-// 注意此处注解要添加相对路径标识符/
+@WebServlet("/CartServlet")
+// 注意此处注解要添加相对路径标识符/,改成"/"的形式,去掉前面的标签name
 
 public class CartServlet extends HttpServlet {
     @Override
