@@ -13,7 +13,9 @@ import java.io.PrintWriter;
  * 负责将商品加入购物车(cookie)
  */
 
-@WebServlet(name = "CartServlet")
+@WebServlet(name = "/CartServlet")
+// 注意此处注解要添加相对路径标识符/
+
 public class CartServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
